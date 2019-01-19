@@ -1,0 +1,28 @@
+.x
+    {
+        height: 100em;
+        background-image: url('src\assets\blue.jpg');
+        
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-attachment: fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+      
+      }
+.p {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .p:hover {
+    border-color: #f1f1f1;
+  }
+  .color{
+    color: white;
+  }
+  

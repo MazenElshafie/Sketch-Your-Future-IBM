@@ -1,0 +1,17 @@
+.back1{
+    height: 50em;
+    background-image: url('src\assets\plain.jpg');
+    
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+  
+  }
+  a{
+      color: black;
+      font-size: bold;
+  }

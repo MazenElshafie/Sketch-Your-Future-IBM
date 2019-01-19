@@ -1,0 +1,69 @@
+<!-- <div class="back">
+<br>
+<h1 class="text-center">Please Login here! </h1>
+<br>
+<br>
+<form class="form-horizontal" >
+    
+
+      
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">Email:</label>
+    <div class="col-sm-4">
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Password:</label>
+    <div class="col-sm-4"> 
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+    </div>
+  </div>
+
+  
+
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default" routerLink="/faculties" routerLinkActive="active">Login</button>
+      <p>Don't have an account? <a routerLink="/signup" routerLinkActive="active">Signup</a></p>
+    </div>
+  </div>
+</form>
+</div> -->
+<div class="back1"> 
+  <h1 >Please Signin here!</h1>
+  <br>
+  <br>
+  <form class="form-horizontal" [formGroup]="signinForm" (ngSubmit)="Submit()" >
+      
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="col-sm-4">
+        <input type="email" class="form-control" id="email" placeholder="Enter email"
+        formControlName="email"
+        >
+        <span class="help-block" *ngIf="!signinForm.get('email').valid && signinForm.get('email').touched">
+          Please enter a valid email!
+        </span>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Password:</label>
+      <div class="col-sm-4"> 
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password"
+        formControlName="password"
+        >
+      </div>
+    </div>
+  
+    <div class="form-group "> 
+      <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-success" (click)="Submit()"
+          >Login</button>
+          <p>Don't have an account? <a routerLink="/signup" routerLinkActive="active">Signup</a></p>
+      </div>
+    </div>
+  </form>
+  </div>

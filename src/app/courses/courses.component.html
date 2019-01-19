@@ -1,0 +1,21 @@
+<div class="x">
+  <div class="container text-center">
+    <h1 class="text-center color">Courses</h1>
+    <br>
+    <h3>{{departmentName}} courses</h3>
+    <button *ngIf="role"type="submit" class="btn btn-danger">
+      Add Course</button>
+    <br>
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let d of data"  >
+        <p><strong>{{d.name}}</strong></p><br>
+        <img src="{{d.imagePath}}" alt="Random Name" class="img-circle p" 
+           >
+        <p><strong>{{d.description}}</strong></p><br>
+        <button *ngIf="!role"type="submit" class="btn btn-danger">
+          Join Course</button>
+      </div>
+      
+    </div>
+  </div>
+  </div>

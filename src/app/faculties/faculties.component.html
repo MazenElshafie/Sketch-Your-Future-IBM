@@ -1,0 +1,42 @@
+<!-- <div class="x">
+<div class="container text-center">
+  <h1 class="text-center">Faculties</h1>
+  <br>
+  <h3>Explore faculties departments and courses..</h3>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p><strong>Engineering</strong></p><br>
+      <img src="./assets/heads.jpg" alt="Random Name" class="img-circle p">
+    </div>
+    <div class="col-sm-4">
+      <p><strong>Medicine</strong></p><br>
+      <img src="./assets/heads.jpg" alt="Random Name" class="img-circle p">
+    </div>
+    <div class="col-sm-4">
+      <p><strong>Science</strong></p><br>
+      <img src="./assets/heads.jpg" alt="Random Name" class="img-circle p">
+    </div>
+  </div>
+</div>
+<p *ngFor="let d of data" class="color">{{d.name}}</p>
+</div> -->
+<div class="x">
+  <div class="container text-center">
+    <h1 class="text-center">Faculties</h1>
+    <br>
+    <h3>Explore faculties departments and courses..</h3>
+    <br>
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let d of data"  >
+        <p><strong>{{d.name}}</strong></p><br>
+        <img src="{{d.imagePath}}" alt="Random Name" class="img-circle p" 
+           (click)="chooseDepartment(d.name)">
+        <p><strong class="d">Description: </strong><strong class="color">{{d.description}}</strong></p><br>
+        
+      </div>
+      
+    </div>
+  </div>
+
+  </div>

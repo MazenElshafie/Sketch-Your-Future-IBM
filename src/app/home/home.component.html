@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="bg">
+    <div class="container text-center ">
+        <!-- <img src="heads_and_lightbulbs_illustration.jpg" alt="hna"> -->
+        
+      <!-- <button type="button" class="btn btn-primary btn-lg ab" (click)="Student()"  >Student</button> -->
+      <br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="row">
+        <div class="col-sm-4" >
+          <img src="{{studentImg}}" alt="Random Name" class="img-circle p"
+             (click)="Student()">
+          <p><strong>Continue as a Student!</strong></p>          
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+      <!-- </div>
+      <button type="button" class="btn btn-success btn-lg ba" (click)="Instructor()"  >Instructor</button>
+      </div> -->
+        <div class="col-sm-4" >
+          <img src="{{instructorImg}}" alt="Random Name" class="img-circle p" 
+             (click)="Instructor()"> 
+             <p><strong>Continue as an Instructor!</strong></p>            
+        </div>
+      </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>

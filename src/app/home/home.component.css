@@ -1,0 +1,49 @@
+
+   /* html,body {
+    background-image: url('src\assets\heads.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  } */
+
+  h1{
+    color: brown
+  }
+  .bg{
+    height: 50em;
+    background-image: url('src\assets\sketch1.jpg');
+    
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+  
+  }
+  .ab{
+    margin-right: 120px;
+     margin-top: 300px;
+  }
+  .ba{
+    margin-left: 150px;
+    margin-top: 300px;
+  }
+  .p {
+    border: 7px solid black;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .p:hover {
+    border-color: #f1f1f1;
+  }
+  p{
+    
+    font-size: 2em;
+    font-weight: 900;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
