@@ -8,13 +8,13 @@ export class CoursesService {
   constructor() { }
   MechanicsCourses: course[]=[
     new course(
-      'Cars',
+      'Mechanics',
       'Learns ..',
       'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX29349325.jpg'
     
 ),
 new course(
-  'Cars',
+  'Dynamics',
   'Learns ..',
   'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX29349325.jpg'
 

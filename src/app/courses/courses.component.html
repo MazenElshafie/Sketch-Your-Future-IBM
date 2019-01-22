@@ -3,8 +3,8 @@
     <h1 class="text-center color">Courses</h1>
     <br>
     <h3>{{departmentName}} courses</h3>
-    <button *ngIf="role"type="submit" class="btn btn-danger">
-      Add Course</button>
+    <button *ngIf="role"type="submit" class="btn btn-danger" (click)="addCourse()">
+      Add Course </button>
     <br>
     <div class="row">
       <div class="col-sm-4" *ngFor="let d of data"  >

@@ -64,8 +64,8 @@ export class CoursesComponent implements OnInit {
   else if (this.departmentName==='Decor'){
     this.data=this.coursesService.DecorCourses;    
   }
-  
-
-
-  }
+   }
+   addCourse(){
+    this.router.navigate(['/addCourse',this.departmentName]);
+   }
 }

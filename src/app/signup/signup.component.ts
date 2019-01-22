@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 import { AngularFireDatabase } from 'angularfire2/database';
 import {  Router } from '@angular/router';
 import { SessionService} from '../session.service';
+import { faculty } from '../Models/faculty.model';
 
 
 @Component({
@@ -19,6 +20,8 @@ export class SignupComponent implements OnInit {
   password:string;
   constructor(private authService: AuthService, private afDatabase: AngularFireDatabase,private router:Router,private sessionService:SessionService) { }
   uid:any;
+  user={};
+  f:any;
   ngOnInit() {
     this.signupForm=new FormGroup({
       'firstName':new FormControl(null,Validators.required),
@@ -26,19 +29,53 @@ export class SignupComponent implements OnInit {
       'email':new FormControl(null,[Validators.required,Validators.email]),
       'password':new FormControl(null,[Validators.required]),
     });
+    this.afDatabase.database.ref('faculties').once('value').then(snapshot=>{
+      
+      snapshot.forEach(element => {
+        this.f=element.toJSON();
+        console.log(this.f.name);
+      });
+       //console.log(this.f);
+    });
   }
 Submit(){
-  this.authService.signup(this.signupForm.value.email,this.signupForm.value.password);
+  //this.authService.signup(this.signupForm.value.email,this.signupForm.value.password);
+
   // firebase.auth().createUserWithEmailAndPassword(this.signupForm.value.email,this.signupForm.value.firstName);
   //`faculties/${id}`
-  this.afDatabase.database.ref('faculties').once('value').then(snapshot=>{
-     console.log(snapshot.val());
-     this.router.navigate(['/faculties']);
-  });
+  
+  
+  firebase.auth().createUserWithEmailAndPassword(this.signupForm.value.email,this.signupForm.value.password)
+      .then( response => {this.sessionService.setData('id',response.user.uid)
+                           console.log("authhhhhhhh id  " + response.user.uid);   
+                           console.log(this.sessionService.getData('role'));
  this.uid=this.sessionService.getData('id');
-  this.afDatabase.database.ref('users/instructor').push({'3' :{firstNAme:this.signupForm.value.firstName,
+ console.log("signupppppppp id    "+ this.uid);
+
+ if(this.sessionService.getData('role')=='student'){
+  this.user[`${this.uid}`]={firstNAme:this.signupForm.value.firstName,
     lastName:this.signupForm.value.lastName,
     email:this.signupForm.value.email,
-    password:this.signupForm.value.password}});
+    password:this.signupForm.value.password};
+    this.afDatabase.database.ref('users/student').update(this.user);
+ }
+ else if(this.sessionService.getData('role')=='instructor'){
+  this.user[`${this.uid}`]={firstNAme:this.signupForm.value.firstName,
+    lastName:this.signupForm.value.lastName,
+    email:this.signupForm.value.email,
+    password:this.signupForm.value.password};
+    this.afDatabase.database.ref('users/instructor').update(this.user);
+ }
+  
+ this.router.navigate(['/faculties']);
+                          })
+      .catch( error => console.log("Error fl signUP") )
+
+ 
+  // this.afDatabase.database.ref('users/instructor').update({'3' :{firstNAme:this.signupForm.value.firstName,
+  //   lastName:this.signupForm.value.lastName,
+  //   email:this.signupForm.value.email,
+  //   password:this.signupForm.value.password}});
+  
 }
 }

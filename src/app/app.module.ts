@@ -19,6 +19,7 @@ import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule} from 'angularfire2/database'
 import { config } from 'src/environments/environment';
 import { SessionService} from './session.service';
+import { AddCourseComponent } from './add-course/add-course.component';
 const routes:Routes= [
   {path:'',component:HomeComponent},
   {path:'login',component:LoginComponent},
@@ -27,7 +28,8 @@ const routes:Routes= [
   {path:'departments',component:DepartmentsComponent},
   {path:'departments/:faculty',component:DepartmentsComponent},
   {path: 'courses',component:CoursesComponent},
-  {path: 'courses/:department',component:CoursesComponent}
+  {path: 'courses/:department',component:CoursesComponent},
+  {path: 'addCourse/:department',component:AddCourseComponent}
 
 ]
 @NgModule({
@@ -38,7 +40,8 @@ const routes:Routes= [
     SignupComponent,
     FacultiesComponent,
     DepartmentsComponent,
-    CoursesComponent
+    CoursesComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,
