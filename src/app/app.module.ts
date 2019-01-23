@@ -20,6 +20,7 @@ import { AngularFireDatabaseModule} from 'angularfire2/database'
 import { config } from 'src/environments/environment';
 import { SessionService} from './session.service';
 import { AddCourseComponent } from './add-course/add-course.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const routes:Routes= [
   {path:'',component:HomeComponent},
   {path:'login',component:LoginComponent},
@@ -50,7 +51,8 @@ const routes:Routes= [
     HttpModule,
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(config),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    BrowserAnimationsModule
   ],
   providers: [FacultiesService,ServerService, DepartmentsService,AuthService,CoursesService,SessionService],
   bootstrap: [AppComponent]

@@ -13,7 +13,7 @@
       <!-- <button type="button" class="btn btn-primary btn-lg ab" (click)="Student()"  >Student</button> -->
       <br><br><br><br><br><br><br><br><br><br><br><br><br>
       <div class="row">
-        <div class="col-sm-4" >
+        <div class="col-sm-4" [@StudentImg]>
           <img src="{{studentImg}}" alt="Random Name" class="img-circle p"
              (click)="Student()">
           <p><strong>Continue as a Student!</strong></p>          
@@ -24,7 +24,7 @@
       <!-- </div>
       <button type="button" class="btn btn-success btn-lg ba" (click)="Instructor()"  >Instructor</button>
       </div> -->
-        <div class="col-sm-4" >
+        <div class="col-sm-4" [@InstructorImg]>
           <img src="{{instructorImg}}" alt="Random Name" class="img-circle p" 
              (click)="Instructor()"> 
              <p><strong>Continue as an Instructor!</strong></p>            
