@@ -6,12 +6,62 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import {  Router } from '@angular/router';
 import { SessionService} from '../session.service';
 import { faculty } from '../Models/faculty.model';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+  keyframes,
+  group
+} from '@angular/animations';
 
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
+  animations: [
+    trigger('left', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100px)'
+        }),
+        animate(500)
+      ]),
+      transition('* => void', [
+        animate(300, style({
+          transform: 'translateX(100px)',
+          opacity: 0
+        }))
+      ])
+    ]),
+    trigger('right', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(100px)'
+        }),
+        animate(300)
+      ]),
+      transition('* => void', [
+        animate(300, style({
+          transform: 'translateX(-100px)',
+          opacity: 0
+        }))
+      ])
+    ]),
+
+  ]
 })
 export class SignupComponent implements OnInit {
 

@@ -5,10 +5,61 @@ import * as firebase from 'firebase';
 import {  Router } from '@angular/router';
 import { SessionService} from '../session.service';
 import { AngularFireDatabase } from 'angularfire2/database';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+  keyframes,
+  group
+} from '@angular/animations';
+import { removeDebugNodeFromIndex } from '@angular/core/src/debug/debug_node';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  animations: [
+    trigger('left', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100px)'
+        }),
+        animate(500)
+      ]),
+      transition('* => void', [
+        animate(300, style({
+          transform: 'translateX(100px)',
+          opacity: 0
+        }))
+      ])
+    ]),
+    trigger('right', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(100px)'
+        }),
+        animate(500)
+      ]),
+      transition('* => void', [
+        animate(300, style({
+          transform: 'translateX(-100px)',
+          opacity: 0
+        }))
+      ])
+    ]),
+
+  ]
 })
 export class LoginComponent implements OnInit {
 

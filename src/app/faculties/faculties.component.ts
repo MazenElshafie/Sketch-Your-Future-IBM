@@ -3,10 +3,39 @@ import { FacultiesService }  from '../faculties.service';
 import { Response } from '@angular/http';
 import { faculty } from '../Models/faculty.model';
 import { RouterModule, Routes, Router } from '@angular/router';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+  keyframes,
+  group
+} from '@angular/animations';
 @Component({
   selector: 'app-faculties',
   templateUrl: './faculties.component.html',
-  styleUrls: ['./faculties.component.css']
+  styleUrls: ['./faculties.component.css'],
+  animations: [
+    trigger('left', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100px)'
+        }),
+        animate(500)
+      ]),
+      transition('* => void', [
+        animate(300, style({
+          transform: 'translateX(100px)',
+          opacity: 0
+        }))
+      ])
+    ]),]
 })
 export class FacultiesComponent implements OnInit {
 

@@ -21,6 +21,7 @@ import { config } from 'src/environments/environment';
 import { SessionService} from './session.service';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './navbar/navbar.component';
 const routes:Routes= [
   {path:'',component:HomeComponent},
   {path:'login',component:LoginComponent},
@@ -42,7 +43,8 @@ const routes:Routes= [
     FacultiesComponent,
     DepartmentsComponent,
     CoursesComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

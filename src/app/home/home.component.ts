@@ -24,9 +24,9 @@ import {
       transition('void => *', [
         style({
           opacity: 0,
-          transform: 'translateX(-100px)'
+          transform: 'translateX(-200px)'
         }),
-        animate(300)
+        animate(500)
       ]),
       transition('* => void', [
         animate(300, style({
@@ -45,7 +45,7 @@ import {
           opacity: 0,
           transform: 'translateX(100px)'
         }),
-        animate(300)
+        animate(500)
       ]),
       transition('* => void', [
         animate(300, style({
