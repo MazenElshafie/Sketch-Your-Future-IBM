@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CoursesService }  from '../courses.service';
+import { CoursesService }  from '../services/courses.service';
 import { course } from '../Models/course.model';
 import { ActivatedRoute} from '@angular/router';
-import { AuthService} from '../auth.service';
+import { AuthService} from '../services/auth.service';
 import { Router } from '@angular/router'
-import { SessionService} from '../session.service';
+import { SessionService} from '../services/session.service';
 import {
   trigger,
   state,

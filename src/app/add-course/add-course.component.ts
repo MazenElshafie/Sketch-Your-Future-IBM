@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { course } from '../Models/course.model';
-import { CoursesService }  from '../courses.service';
+import { CoursesService }  from '../services/courses.service';
 import { ActivatedRoute} from '@angular/router';
 import { Router } from '@angular/router'
-import { SessionService} from '../session.service';
+import { SessionService} from '../services/session.service';
 import { NgForm,FormGroup,FormControl, Validators } from '@angular/forms';
 import { AngularFireDatabase } from 'angularfire2/database';
 @Component({

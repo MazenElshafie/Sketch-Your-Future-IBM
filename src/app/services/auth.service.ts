@@ -12,9 +12,9 @@ export class AuthService {
    signup(email:string,password:string){
    firebase.auth().createUserWithEmailAndPassword(email,password)
       .then( response => {this.sessionService.setData('id',response.user.uid)
-                           console.log("authhhhhhhh id  " + response.user.uid);       
+                           console.log("auth id  " + response.user.uid);       
                           })
-      .catch( error => console.log("Error fl signUP") )
+      .catch( error => console.log("Error while signUP") )
    }
 
    signin(email:string,password:string){

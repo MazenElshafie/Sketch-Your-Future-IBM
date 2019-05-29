@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FacultiesService }  from '../faculties.service';
+import { FacultiesService }  from '../services/faculties.service';
 import { Response } from '@angular/http';
 import { faculty } from '../Models/faculty.model';
 import { RouterModule, Routes, Router } from '@angular/router';

@@ -8,17 +8,17 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FacultiesComponent } from './faculties/faculties.component'; 
 import { HttpModule } from '@angular/http';
-import {FacultiesService} from './faculties.service';
-import {ServerService} from './server.service';
+import {FacultiesService} from './services/faculties.service';
+import {ServerService} from './services/server.service';
 import { DepartmentsComponent } from './departments/departments.component';
-import { DepartmentsService} from './departments.service';
-import { AuthService } from './auth.service';
+import { DepartmentsService} from './services/departments.service';
+import { AuthService } from './services/auth.service';
 import { CoursesComponent } from './courses/courses.component';
-import { CoursesService } from './courses.service';
+import { CoursesService } from './services/courses.service';
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule} from 'angularfire2/database'
 import { config } from 'src/environments/environment';
-import { SessionService} from './session.service';
+import { SessionService} from './services/session.service';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { faculty } from './Models/faculty.model';
+import { faculty } from '../Models/faculty.model';
 import { Response } from '@angular/http';
 @Injectable({
   providedIn: 'root'
